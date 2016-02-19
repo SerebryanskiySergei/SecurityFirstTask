@@ -27,13 +27,12 @@ namespace Security_first_task
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            _calculator = new Calculator();
             int value_count = _calculator.FillData(4.1);
             _calculator.GenerateSections();
             label3.Text = value_count.ToString();
             chart1.Series.Clear();
             chart1.Series.Add("Values in interval");
-
             for (int i = 0; i < _calculator.Sections.Count; i++)
                 chart1.Series[0].Points.AddXY("[ "+_calculator.Interval * i +" , "+_calculator.Interval * (i+1) +" ]", _calculator.Sections[i]);
         }

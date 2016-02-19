@@ -12,6 +12,7 @@ namespace Security_first_task
         public Dictionary<int, int> Sections;
         public double Interval;
         private const int DEFAULT_SECTIONS_COUNT = 10;
+        private const int DEFAULT_VALUES_COUNT = 50000;
         private int _sectionsCount;
 
         public double MeanValue
@@ -52,6 +53,8 @@ namespace Security_first_task
             {
                 Values.Add(newValue);
                 newValue = GenerateNextValue(newValue);
+                if (Values.Count > DEFAULT_VALUES_COUNT)
+                    return Values.Count;
             }
             return Values.Count;
         }
