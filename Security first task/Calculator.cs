@@ -78,8 +78,6 @@ namespace Security_first_task
 
         public double GenerateXi()
         {
-            // TODO Спросить Вику как считать эту поебень
-
             double xi = 0.0;
             foreach (KeyValuePair<int, int> section in Sections)
             {
@@ -88,6 +86,18 @@ namespace Security_first_task
             return xi;
         }
 
+        public double TestWithKnownTask()
+        {
+            int counter = 0;
+            for (int i = 1; i < Values.Count; i++)
+            {
+                double r = Math.Sqrt(Math.Pow(Values[i],2) + Math.Pow(Values[i-1],2));
+                if (r < 1)
+                    counter++;
+            }
+            double experimentalPi = 8*counter/Values.Count;
+            return experimentalPi;
+        }
 
 
 
