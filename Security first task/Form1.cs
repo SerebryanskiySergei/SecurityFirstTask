@@ -37,6 +37,7 @@ namespace Security_first_task
             label4.Text = "Count of diff values" + value_count.ToString();
             label5.Text = _calculator.MeanValue.ToString();
             label6.Text = _calculator.Dispersion.ToString();
+            label7.Text = _calculator.GenerateXi().ToString();
             chart1.Series.Clear();
             chart1.Series.Add("Values in interval");
             for (int i = 0; i < _calculator.Sections.Count; i++)

@@ -79,7 +79,13 @@ namespace Security_first_task
         public double GenerateXi()
         {
             // TODO Спросить Вику как считать эту поебень
-            return 1.0;
+
+            double xi = 0.0;
+            foreach (KeyValuePair<int, int> section in Sections)
+            {
+                xi += Math.Pow((section.Value - 1.0/_sectionsCount), 2) / (1.0/_sectionsCount);
+            }
+            return xi;
         }
 
 
