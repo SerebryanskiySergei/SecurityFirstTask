@@ -32,11 +32,10 @@ namespace Security_first_task
             }
         }
 
-        public Calculator(int sectionsCount = DEFAULT_SECTIONS_COUNT)
+        public Calculator()
         {
             Values = new List<double>();
             Sections = new Dictionary<int, int>();
-            _sectionsCount = sectionsCount;
         }
 
         private double GenerateNextValue(double baseValue)
@@ -54,26 +53,33 @@ namespace Security_first_task
                 Values.Add(newValue);
                 newValue = GenerateNextValue(newValue);
                 if (Values.Count > DEFAULT_VALUES_COUNT)
-                    return Values.Count;
+                    return DEFAULT_VALUES_COUNT;
             }
             return Values.Count;
         }
 
-        public void GenerateSections()
+        public void GenerateSections(int sectionsCount = DEFAULT_SECTIONS_COUNT)
         {
+            _sectionsCount = sectionsCount;
             Interval = (Values.Max() - Values.Min()) / _sectionsCount;
-            for (int i = _sectionsCount - 1; i >= 0; i--)
+            for (int i = 0; i <_sectionsCount; i++)
             {
                 Sections.Add(i, 0);
             }
             foreach (double value in Values)
             {
-                for (int i = _sectionsCount - 1; i >= 0; i--)
+                for (int i = 0; i < _sectionsCount; i++)
                 {
                     if ((value >= Interval*i) && (value < Interval*(i + 1)))
                         Sections[i] += 1;
                 }
             }
+        }
+
+        public double GenerateXi()
+        {
+            // TODO Спросить Вику как считать эту поебень
+            return 1.0;
         }
 
 
