@@ -12,7 +12,7 @@ namespace Security_first_task
         public Dictionary<int, int> Sections;
         public double Interval;
         private const int DEFAULT_SECTIONS_COUNT = 10;
-        private const int DEFAULT_VALUES_COUNT = 50000;
+        public const int DEFAULT_VALUES_COUNT = 10000;
         private int _sectionsCount;
 
         public double MeanValue
@@ -89,13 +89,13 @@ namespace Security_first_task
         public double TestWithKnownTask()
         {
             int counter = 0;
-            for (int i = 1; i < Values.Count; i++)
+            for (int i = 1; i < Values.Count /2; i++)
             {
-                double r = Math.Sqrt(Math.Pow(Values[i],2) + Math.Pow(Values[i-1],2));
+                double r = Math.Sqrt(Math.Pow(Values[2*i],2) + Math.Pow(Values[2*i-1],2));
                 if (r < 1)
                     counter++;
             }
-            double experimentalPi = 8*counter/Values.Count;
+            double experimentalPi = 8.0*counter/Values.Count;
             return experimentalPi;
         }
 

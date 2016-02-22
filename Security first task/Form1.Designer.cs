@@ -39,9 +39,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.meanLbl = new System.Windows.Forms.Label();
+            this.dispLbl = new System.Windows.Forms.Label();
+            this.xiLbl = new System.Windows.Forms.Label();
+            this.pilbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,41 +121,51 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Diff values count:";
             // 
-            // label5
+            // meanLbl
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(543, 53);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Mean value:";
+            this.meanLbl.AutoSize = true;
+            this.meanLbl.Location = new System.Drawing.Point(543, 53);
+            this.meanLbl.Name = "meanLbl";
+            this.meanLbl.Size = new System.Drawing.Size(66, 13);
+            this.meanLbl.TabIndex = 9;
+            this.meanLbl.Text = "Mean value:";
             // 
-            // label6
+            // dispLbl
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(543, 85);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Dispersion:";
+            this.dispLbl.AutoSize = true;
+            this.dispLbl.Location = new System.Drawing.Point(543, 85);
+            this.dispLbl.Name = "dispLbl";
+            this.dispLbl.Size = new System.Drawing.Size(59, 13);
+            this.dispLbl.TabIndex = 10;
+            this.dispLbl.Text = "Dispersion:";
             // 
-            // label7
+            // xiLbl
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(543, 113);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(16, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Xi";
+            this.xiLbl.AutoSize = true;
+            this.xiLbl.Location = new System.Drawing.Point(543, 113);
+            this.xiLbl.Name = "xiLbl";
+            this.xiLbl.Size = new System.Drawing.Size(16, 13);
+            this.xiLbl.TabIndex = 11;
+            this.xiLbl.Text = "Xi";
+            // 
+            // pilbl
+            // 
+            this.pilbl.AutoSize = true;
+            this.pilbl.Location = new System.Drawing.Point(543, 137);
+            this.pilbl.Name = "pilbl";
+            this.pilbl.Size = new System.Drawing.Size(16, 13);
+            this.pilbl.TabIndex = 12;
+            this.pilbl.Text = "Pi";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 369);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.pilbl);
+            this.Controls.Add(this.xiLbl);
+            this.Controls.Add(this.dispLbl);
+            this.Controls.Add(this.meanLbl);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.label3);
@@ -182,9 +193,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label meanLbl;
+        private System.Windows.Forms.Label dispLbl;
+        private System.Windows.Forms.Label xiLbl;
+        private System.Windows.Forms.Label pilbl;
     }
 }
 

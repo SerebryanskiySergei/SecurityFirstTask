@@ -34,10 +34,14 @@ namespace Security_first_task
                 _calculator.GenerateSections(Convert.ToInt32(textBox2.Text));
             else
                 _calculator.GenerateSections();
-            label4.Text = "Count of diff values" + value_count.ToString();
-            label5.Text = _calculator.MeanValue.ToString();
-            label6.Text = _calculator.Dispersion.ToString();
-            label7.Text = _calculator.GenerateXi().ToString();
+            if (value_count == Calculator.DEFAULT_VALUES_COUNT)
+                label4.Text = "Count of diff values : more than " + Calculator.DEFAULT_VALUES_COUNT;
+            else
+                label4.Text = "Count of diff values : " + value_count.ToString();
+            meanLbl.Text = "Mean value = "+_calculator.MeanValue.ToString();
+            dispLbl.Text = "Dispersion = "+_calculator.Dispersion.ToString();
+            xiLbl.Text = "Xi ^2 = "+_calculator.GenerateXi().ToString();
+            pilbl.Text = "Experimentsl PI = "+_calculator.TestWithKnownTask().ToString();
             chart1.Series.Clear();
             chart1.Series.Add("Values in interval");
             for (int i = 0; i < _calculator.Sections.Count; i++)
